@@ -2,4 +2,7 @@
 **/data/
 **/env/
 **/models/
+!*/src/models/
 **/.ipynb_checkpoints/
+
+
