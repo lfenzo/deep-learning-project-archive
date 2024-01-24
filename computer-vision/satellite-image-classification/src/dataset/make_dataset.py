@@ -3,15 +3,15 @@ import shutil
 import numpy as np
 
 
-RAW_DATA_DIR = "archive/data/"
-DATA_DIR = "data/"
+RAW_DATA_DIR = "../../archive/data/"
+DATA_DIR = "../../data/"
 CLASSES = ['desert', 'water', 'cloudy', 'green_area']
 
 
 def create_directories(dirs: list[str], classes: list[str]) -> None:
     for dir in dirs:
         for class_name in classes:
-            os.makedirs(f"data/{dir}/{class_name}", exist_ok=True)
+            os.makedirs(f"{DATA_DIR}/{dir}/{class_name}", exist_ok=True)
 
 
 def train_valid_test_split_by_percentage(files: list[str], percents: list[float]) -> list[np.array]:
@@ -37,6 +37,6 @@ if __name__ == "__main__":
         for (directory, files) in zip(['train', 'valid', 'test'], [train_files, valid_files, test_files]):
             for file in files:
                 shutil.copyfile(
-                    src=f"archive/data/{class_name}/{file}",
-                    dst=f"data/{directory}/{class_name}/{file}"
+                    src=f"{RAW_DATA_DIR}/{class_name}/{file}",
+                    dst=f"{DATA_DIR}/{directory}/{class_name}/{file}"
                 )
