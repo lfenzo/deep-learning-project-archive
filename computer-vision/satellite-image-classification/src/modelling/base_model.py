@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch import Tensor
 
-import utils
+import src.modelling.utils as utils
 
 
 class BaseImageClassifier(nn.Module):

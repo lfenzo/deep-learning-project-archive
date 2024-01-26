@@ -1,6 +1,6 @@
 import torch.nn as nn
 
-from base_model import BaseImageClassifier
+from src.modelling.base_model import BaseImageClassifier
 
 
 def conv_block(in_channels: int, out_channels: int, pool: bool = False):
@@ -24,7 +24,7 @@ class ResNet(BaseImageClassifier):
         self.conv3 = conv_block(128, 256, pool=True)
         self.conv4 = conv_block(256, 512, pool=True)
         self.res2 = nn.Sequential(conv_block(512, 512), conv_block(512, 512))
-        self.classfier = nn.Sequential(
+        self.classifier = nn.Sequential(
             nn.AdaptiveAvgPool2d(1),
             nn.Flatten(),
             nn.Dropout(0.2),
