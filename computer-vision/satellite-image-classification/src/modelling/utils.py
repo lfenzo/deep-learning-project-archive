@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+from tqdm import tqdm
 from torch.utils.data import DataLoader
 
 
@@ -30,6 +31,7 @@ def train_model(
     optimizer=None,
     grad_clip=None,
 ):
+    torch.cuda.empty_cache()
     history = []
     scheduler = torch.optim.lr_scheduler.OneCycleLR(
         optimizer,
@@ -38,29 +40,31 @@ def train_model(
         steps_per_epoch=len(train_loader),
     )
 
+    model.to(model.device)
+
     for epoch in range(epochs):
         model.train()
         train_losses = []
         lrs = []
 
-        for batch in train_loader:
+        for batch in tqdm(train_loader):
             loss = model.training_step(batch)
-            print(loss)
             train_losses.append(loss)
-#
-#            if grad_clip:
-#                nn.utils.clip_grad_value_(model.parameters(), grad_clip)
+            loss.backward()
 
-        optimizer.step()
-        optimizer.zero_grad()
+            if grad_clip:
+                nn.utils.clip_grad_value_(model.parameters(), grad_clip)
 
-        lrs.append(get_lr(optimizer))
-        scheduler.step()
+            optimizer.step()
+            optimizer.zero_grad()
+
+            lrs.append(get_lr(optimizer))
+            scheduler.step()
 
         result = evaluate(model, valid_loader)
-        result['train_error'] = torch.stack(train_losses).mean().item()
-        result['lrs'] = lrs
-        model.epoch_end()
+        result['train_loss'] = torch.stack(train_losses).mean().item()
+        result['lr'] = lrs
+        model.epoch_end(epoch, result)
         history.append(result)
 
     return history

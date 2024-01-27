@@ -3,8 +3,8 @@ import shutil
 import numpy as np
 
 
-RAW_DATA_DIR = "../../archive/data/"
-DATA_DIR = "../../data/"
+RAW_DATA_DIR = os.path.join("..", "..", "archive", "data")
+DATA_DIR = os.path.join("..", "..", "data")
 CLASSES = ['desert', 'water', 'cloudy', 'green_area']
 
 
@@ -14,10 +14,10 @@ def create_directories(dirs: list[str], classes: list[str]) -> None:
             os.makedirs(f"{DATA_DIR}/{dir}/{class_name}", exist_ok=True)
 
 
-def train_valid_test_split_by_percentage(files: list[str], percents: list[float]) -> list[np.array]:
+def train_valid_test_split_by_percentage(files: list[str], percs: list[float]) -> list[np.array]:
     n_files = len(files)
-    train_split_index = int(n_files * percents[0])
-    valid_split_index = int(n_files * (percents[0] + percents[1]))
+    train_split_index = int(n_files * percs[0])
+    valid_split_index = int(n_files * (percs[0] + percs[1]))
     train_files, valid_files, test_files = np.split(np.array(files), [train_split_index, valid_split_index])
     return train_files, valid_files, test_files
 
