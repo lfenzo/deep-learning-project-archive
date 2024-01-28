@@ -1,4 +1,5 @@
 import torch
+import numpy as np
 import torch.nn as nn
 from tqdm import tqdm
 from torch.utils.data import DataLoader
@@ -63,8 +64,32 @@ def train_model(
 
         result = evaluate(model, valid_loader)
         result['train_loss'] = torch.stack(train_losses).mean().item()
-        result['lr'] = lrs
+        result['lr'] = torch.tensor(lrs).mean().item()
         model.epoch_end(epoch, result)
         history.append(result)
 
     return history
+
+
+def evaluate_model(model, loader: DataLoader):
+    predicted_labels = []
+    correct_labels = []
+
+    model.eval()
+    model.to(model.device)
+
+    with torch.no_grad():
+        for images, labels in tqdm(loader):
+            images = images.to(model.device)
+            labels = labels.to(model.device)
+            outputs = model(images)
+            _, predicted = torch.max(outputs, 1)
+
+            predicted_labels = np.append(predicted_labels, predicted.cpu().numpy())
+            correct_labels = np.append(correct_labels, labels.cpu().numpy())
+
+    model.to(torch.device("cpu"))
+    accuracy = np.sum(predicted_labels == correct_labels) / len(correct_labels)
+    print(f"Accuracy for test set: {accuracy}")
+
+    return predicted_labels, correct_labels

@@ -9,7 +9,7 @@ from src.modelling import utils
 
 class BaseImageClassifier(nn.Module):
 
-    def __init__(self,):
+    def __init__(self):
         super().__init__()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.weight = torch.empty(3, 4)
@@ -44,7 +44,7 @@ class BaseImageClassifier(nn.Module):
             "Epoch [{}] | lr: {:.5f} | train loss: {:.4f} | valid loss: {:.4f} | accuracy: {:.4f}"
             .format(
                 epoch,
-                result['lr'][0],
+                result['lr'],
                 result['train_loss'],
                 result['valid_loss'],
                 result['valid_accuracy'],
