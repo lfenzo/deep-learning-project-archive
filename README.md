@@ -5,6 +5,6 @@ Collection of various Deep Learning studies and POCs implemented part as study m
 ## Index
 
 - Computer Vision
-    - [Satellite Image Classification]()https://github.com/lfenzo/deep-learning-archive/tree/main/computer-vision/satellite-image-classification
+    - [Satellite Image Classification](https://github.com/lfenzo/deep-learning-archive/tree/main/computer-vision/satellite-image-classification)
 - Tabular
     - [Solar Radiation Regression](https://github.com/lfenzo/deep-learning-archive/tree/main/tabular/solar-radiation-regression)
