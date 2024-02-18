@@ -1,10 +1,10 @@
 # Simple Satellite Image Classification
 
-The objective  this project was to assess the difference between the `Adam`, `SGD` and `RMSProp` optimizers
-in a task of image classification with neural networks trained using PyTorch.
+The objective of this project was to compare the difference between the `Adam`, `SGD` and
+`RMSprop` optimizers in a task of image classification with neural networks trained using PyTorch.
 
 - **Problem domain(s):** multi-class image classification.
-- **Model architecture(s)**: Resnet.
+- **Model architecture(s)**: Resnet (defined and trained from scratch).
 - **Optimizer(s)**: Adam, Stochastic Gradient Descent and RMSProp.
 
 ## Dataset
@@ -23,6 +23,10 @@ The figure below depicts examples for these images as well as their respective c
 The data can be freely downloaded in the following [Kaggle dataset link](https://www.kaggle.com/datasets/mahmoudreda55/satellite-image-classification?resource=download).
 
 ## Performance
+
+![](./images/learning_curves.png)
+
+-----------------
 
 ![](./images/confusion_matrix.png)
 
