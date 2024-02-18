@@ -10,7 +10,7 @@ The objective of this project was to compare the difference between the `Adam`, 
 ## Dataset
 
 Data used in this project corresponds to Remote Sensing (RS) images stored as `.jpg` files with relatively
-small resolution. Each of the images is associated to exactly one of the following 4 classes:
+low resolution. Each of the images is associated to exactly one of the following 4 classes:
 - green area
 - cloudy
 - desert
@@ -24,11 +24,12 @@ The data can be freely downloaded in the following [Kaggle dataset link](https:/
 
 ## Performance
 
-![](./images/learning_curves.png)
-
------------------
-
-![](./images/confusion_matrix.png)
+<table>
+    <tr>
+        <td><img src = "./images/learning_curves.png"></td>
+        <td><img src = "./images/confusion_matrix.png"></td>
+    </tr>
+</table>
 
 -----------------
 
