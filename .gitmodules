@@ -1,3 +1,6 @@
 [submodule "computer-vision/dummy-satellite-image-classification"]
 	path = computer-vision/dummy-satellite-image-classification
 	url = git@github.com:lfenzo/dummy-satellite-image-classification.git
+[submodule "computer-vision/harvard-skin-cancer-classification"]
+	path = computer-vision/harvard-skin-cancer-classification
+	url = git@github.com:lfenzo/harvard-skin-cancer-classification.git
