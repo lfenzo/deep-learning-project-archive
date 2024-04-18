@@ -1,6 +1,6 @@
 # Deep Learning Project Archive
 
-Umbrella project housing a collection of various Deep Learning studies and POCs implemented part as study material and exercices, part as a project portfolio. The projects are organized in [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) in order to maintain ~~my own sanity~~ better synchronization between the repos.
+Umbrella project housing a collection of various Deep Learning studies and POCs implemented part as study material and exercices, part as a project portfolio. The projects are organized in [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) in order to maintain ~~my own sanity~~ better synchronization across the repos.
 
 ## Index
 
