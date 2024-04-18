@@ -4,3 +4,6 @@
 [submodule "computer-vision/harvard-skin-cancer-classification"]
 	path = computer-vision/harvard-skin-cancer-classification
 	url = git@github.com:lfenzo/harvard-skin-cancer-classification.git
+[submodule "tabular/inmet-solar-radiation-regression"]
+	path = tabular/inmet-solar-radiation-regression
+	url = git@github.com:lfenzo/inmet-solar-radiation-regression.git
