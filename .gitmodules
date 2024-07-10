@@ -7,3 +7,6 @@
 [submodule "tabular/inmet-solar-radiation-regression"]
 	path = tabular/inmet-solar-radiation-regression
 	url = git@github.com:lfenzo/inmet-solar-radiation-regression.git
+[submodule "natural-langage-processing/video-summarization-poc"]
+	path = natural-langage-processing/video-summarization-poc
+	url = git@github.com:lfenzo/video-summarization-poc.git
