@@ -13,3 +13,6 @@
 [submodule "natural-language-processing/poc-video-summarization"]
 	path = natural-language-processing/poc-video-summarization
 	url = git@github.com:lfenzo/poc-video-summarization.git
+[submodule "computer-vision/dl-dogs-vs-cats"]
+	path = computer-vision/dl-dogs-vs-cats
+	url = git@github.com:lfenzo/dl-dogs-vs-cats.git

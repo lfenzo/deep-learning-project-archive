@@ -8,8 +8,9 @@ If for any reason getting access to the code in this project is relevant to you,
 ## Index
 
 - Computer Vision
-    - [Dummy Satellite Image Classification](https://github.com/lfenzo/dummy-satellite-image-classification)
     - [Harvard Skin Cancer Classification](https://github.com/lfenzo/harvard-skin-cancer-classification)
+    - [Dogs vs. Cats](https://github.com/lfenzo/dl-dogs-vs-cats)
+    - [Dummy Satellite Image Classification](https://github.com/lfenzo/dummy-satellite-image-classification)
 - Natural Language Processing
     - [Meeting Summarization POC](https://github.com/lfenzo/poc-meeting-summarization)
     - [Video Summarization POC](https://github.com/lfenzo/poc-video-summarization)
